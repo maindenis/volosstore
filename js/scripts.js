@@ -52,19 +52,19 @@ $(document).ready(function() {
             speed: 2000,
             variableWidth: true,
             slidesToShow: 3,
-            slidesToScroll: 1,
-            centerMode: true,
+            slidesToScroll: 3,
+            // centerMode: true,
             prevArrow: $(".prev_arrow"),
             nextArrow: $(".next_arrow"),
             // fade: true,
             responsive: [
-                {
-                  breakpoint: 1125,
-                  settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
-                  }
-                },
+                // {
+                //   breakpoint: 1125,
+                //   settings: {
+                //     slidesToShow: 3,
+                //     slidesToScroll: 1
+                //   }
+                // },
                 // {
                 //   breakpoint: 540,
                 //   settings: {
@@ -125,5 +125,26 @@ $(document).ready(function() {
         parent.removeClass("active");
       }
     });
+
+    // ----------------
+
+    if($("#map").length > 0) {
+        var mapZoom = $("#map").attr("data-zoom");
+        var lat = $("#map").attr("data-lat");
+        var long = $("#map").attr("data-long");
+        ymaps.ready(function () {        
+            var myMap = new ymaps.Map('map', {
+                center: [long, lat],
+                zoom: mapZoom
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+            myPlacemark1 = new ymaps.Placemark([long, lat], {
+                hintContent: ''
+            }, {
+            });
+            myMap.geoObjects.add(myPlacemark1);        
+        });
+    }
 
 });
