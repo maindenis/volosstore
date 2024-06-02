@@ -58,20 +58,20 @@ $(document).ready(function() {
             nextArrow: $(".next_arrow"),
             // fade: true,
             responsive: [
-                // {
-                //   breakpoint: 1125,
-                //   settings: {
-                //     slidesToShow: 3,
-                //     slidesToScroll: 1
-                //   }
-                // },
-                // {
-                //   breakpoint: 540,
-                //   settings: {
-                //     slidesToShow: 1,
-                //     slidesToScroll: 1
-                //   }
-                // }
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                  }
+                },
+                {
+                  breakpoint: 600,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }
               ]
         });
     }
@@ -124,6 +124,68 @@ $(document).ready(function() {
         sl.slideUp(300);
         parent.removeClass("active");
       }
+    });
+
+    // ----------------
+
+    $(".respmenubtn").click(function(e) {
+      e.preventDefault();
+      if( $("#respNav").is(":hidden") ) {
+          $("#respNav").fadeIn(300);
+          $(this).addClass("active");
+        div = document.createElement('div');
+        div.style.overflowY = 'scroll';
+        div.style.width = '50px';
+        div.style.height = '50px';
+        div.style.visibility = 'hidden';
+        document.body.appendChild(div);
+        scrollWidth = div.offsetWidth - div.clientWidth;
+        document.body.removeChild(div);
+        topCoord = $(document).scrollTop();
+        $("body").addClass("fixed");
+        $("body").css({
+        "top" :  -1 * topCoord + "px",
+        "padding-right" : scrollWidth + "px"
+        });
+      } else {
+          $("#respNav").fadeOut(300);
+          $(this).removeClass("active");
+        curTop = $("body").css("top");
+        curTop = Math.abs(parseInt(curTop, 10));
+        $("body").removeClass("fixed");
+        if (curTop !== 0) {
+        $("html").scrollTop(curTop);
+        }
+        $("body").attr("style", "");
+      }
+    });
+    
+    $(this).keydown(function(eventObject){
+        if (eventObject.which == 27 &&
+            $("#respNav").is(":visible") &&
+            bodyWidth <= 1024) {
+            $("#respNav").fadeOut(300);
+            $(".respmenubtn").removeClass("active");
+            curTop = $("body").css("top");
+            curTop = Math.abs(parseInt(curTop, 10));
+            $("body").removeClass("fixed");
+            if (curTop !== 0) {
+            $("html").scrollTop(curTop);
+            }
+            $("body").attr("style", "");
+        }
+    });
+
+    $(".close_nav").click(function(e) {
+      e.preventDefault();
+        $("#respNav").fadeOut(300);
+        curTop = $("body").css("top");
+        curTop = Math.abs(parseInt(curTop, 10));
+        $("body").removeClass("fixed");
+        if (curTop !== 0) {
+        $("html").scrollTop(curTop);
+        }
+        $("body").attr("style", "");
     });
 
     // ----------------

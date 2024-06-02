@@ -286,6 +286,11 @@ textarea:focus {
     text-align: left;
 }
 
+.z_2 {
+    position: relative;
+    z-index: 2;
+}
+
 /*-------------------------------------------*/
 /* ----- HEADER ------ */
 /*-------------------------------------------*/
@@ -294,8 +299,8 @@ textarea:focus {
     width: 100%;
     padding: 14px 0 11px 0;
     background: #151515;
-/*    position: fixed;*/
-    position: absolute;
+    position: fixed;
+/*    position: absolute;*/
     top: 0;
     left: 0;
     z-index: 3;
@@ -483,8 +488,6 @@ textarea:focus {
     border-bottom: 1px dashed transparent;
 }
 
-
-
 /* ----- Responsive Menu Button ------ */
 
 .respmenubtn {
@@ -496,7 +499,7 @@ textarea:focus {
     background: transparent;
     cursor: pointer;
     position: relative;
-    top: 12px;
+    top: 3px;
     z-index: 11;
     border: 1px solid transparent;
     margin-left: 10px;
@@ -506,7 +509,7 @@ textarea:focus {
     display: block;
     width: 24px;
     height: 2px;
-    background: #1565C0;
+    background: #fff;
     border-radius: 2px;
     -webkit-border-radius: 2px;
     margin: 0 auto 6px auto;
@@ -680,10 +683,6 @@ textarea:focus {
 
 .h1_wrapp {
     padding: 15px 0 15px 0;
-}
-
-.h1_wrapp h1 {
-
 }
 
 .h1_wrapp h1 span {
@@ -872,10 +871,6 @@ textarea:focus {
     color: #FDFDFD;
 }
 
-.article_2 ul {
-
-}
-
 .article_2 ul li {
     display: block;
     position: relative;
@@ -940,14 +935,6 @@ textarea:focus {
     padding: 106px 0 104px 0;
 }
 
-.h2_wrapp {
-
-}
-
-.h2_wrapp h2 {
-
-}
-
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -957,6 +944,13 @@ textarea:focus {
 .gal_item {
     width: calc(25% - 30px);
     margin: 12px 15px;
+    overflow: hidden;
+}
+
+.gal_item img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .moved_line_wrapp {
@@ -1003,10 +997,6 @@ textarea:focus {
 
 /*-- Section 3 - Main Page --*/
 
-.sect_3_mp {
-
-}
-
 .grey_bg {
     background-color: #F7F7F7;
 }
@@ -1036,10 +1026,6 @@ textarea:focus {
     color: #272727;
 }
 
-.thumb_2 ul {
-
-}
-
 .thumb_2 ul li {
     margin: 20px 0;
     display: block;
@@ -1060,10 +1046,6 @@ textarea:focus {
     top: 4px;
     left: 0;
     border-radius: 50%;
-}
-
-.thumb_2 {
-
 }
 
 .thumb_2 img {
@@ -1094,10 +1076,6 @@ textarea:focus {
 
 .article_3 > .right {
     width: 651px;
-}
-
-.article_3 {
-
 }
 
 .article_3 h2 {
@@ -1231,10 +1209,6 @@ textarea:focus {
 
 /*-- Section 5 - Main Page --*/
 
-.sect_5_mp {
-
-}
-
 .article_4 {
     display: flex;
     flex-wrap: wrap;
@@ -1284,10 +1258,6 @@ textarea:focus {
     z-index: 2;
 }
 
-.article_4_descript {
-
-}
-
 .article_4_descript h2 {
     padding: 25px 0;
     font-weight: 700;
@@ -1313,18 +1283,6 @@ textarea:focus {
 
 /*-- Section 6 - Main Page --*/
 
-.sect_6_mp {
-
-}
-
-.h2_wrapp {
-
-}
-
-.h2_wrapp.black {
-
-}
-
 .h2_wrapp.black h2 {
     font-weight: 700;
     font-size: 40px;
@@ -1340,7 +1298,7 @@ textarea:focus {
 
 .thumb_3 {
     width: calc(25% - 30px);
-    height: 154px;
+    min-height: 154px;
     margin: 15px;
     padding: 20px 25px 10px 25px;
     background: #FDFDFD;
@@ -1386,10 +1344,6 @@ textarea:focus {
 
 /*-- Section 7 - Main Page --*/
 
-.sect_7_mp {
-
-}
-
 .shape_2 {
     position: absolute;
     bottom: 0;
@@ -1432,10 +1386,6 @@ textarea:focus {
     padding: 10px 10px 10px 10px;
 }
 
-.num {
-
-}
-
 .table_2 h3 {
     font-weight: 700;
     font-size: 32px;
@@ -1476,10 +1426,6 @@ textarea:focus {
     padding: 39px 0 46px 0;
 }
 
-.faq_wrapp .h2_wrapp {
-
-}
-
 .faqs {
     padding: 28px 0 28px 0;
 }
@@ -1490,6 +1436,7 @@ textarea:focus {
 }
 
 .faq_item_title {
+    padding-right: 40px;
     position: relative;
     cursor: pointer;
 }
@@ -1551,10 +1498,6 @@ textarea:focus {
     color: #151515;
 }
 
-.dr_title {
-
-}
-
 .dr_content {
     display: none;
 }
@@ -1562,10 +1505,6 @@ textarea:focus {
 /*-- /Section 7 - Main Page --*/
 
 /*-- Section 8 - Main Page --*/
-
-.sect_8_mp {
-
-}
 
 .slider_header {
     display: flex;
@@ -1602,14 +1541,6 @@ textarea:focus {
     font-size: 32px;
     line-height: 38px;
     color: #272727;
-}
-
-#curSl {
-
-}
-
-#slLenght {
-
 }
 
 .slider {
@@ -1760,10 +1691,6 @@ textarea:focus {
     padding: 76px 0 40px 0;
 }
 
-.black_bg {
-
-}
-
 .contacts_templ {
     display: flex;
     flex-wrap: wrap;
@@ -1793,10 +1720,6 @@ textarea:focus {
 
 .form .input_wrapp {
     margin-top: 16px;
-}
-
-.input_wrapp {
-
 }
 
 .input_wrapp input {
@@ -1864,10 +1787,6 @@ textarea:focus {
     padding: 33px 0 10px 0;
 }
 
-.submit_wrapp .red_pill {
-
-}
-
 .img_box_4 {
     width: 100%;
     height: 590px;
@@ -1905,10 +1824,6 @@ textarea:focus {
 
 /*-- Section 10 - Main Page --*/
 
-.sect_10_mp {
-
-}
-
 .contacts_article {
     display: flex;
     flex-wrap: wrap;
@@ -1932,14 +1847,7 @@ textarea:focus {
 
 #map {
     height: 465px;
-}
-
-.contacts_article {
-
-}
-
-.contacts_article .h2_wrapp {
-
+    border-radius: 12px;
 }
 
 .contacts_article .h2_wrapp h2 {
@@ -1964,10 +1872,6 @@ textarea:focus {
     font-size: 24px;
     line-height: 29px;
     color: #FDFDFD;
-}
-
-.contacts_links {
-
 }
 
 .contacts_links h3 {
@@ -2077,8 +1981,6 @@ textarea:focus {
 
 .single_article > .right {
     width: 515px;
-/*    display: flex;
-    justify-content: flex-end;*/
 }
 
 .single_article h2 {
@@ -2123,17 +2025,12 @@ textarea:focus {
     font-weight: 600;
 }
 
-
 /*-- /Section 1 - Single Page --*/
 
 
 /*-------------------------------------------*/
 /* ----- FOOTER ------ */
 /*-------------------------------------------*/
-
-footer {
-
-}
 
 .footer_section {
     background: #151515;
