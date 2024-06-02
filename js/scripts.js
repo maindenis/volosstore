@@ -190,6 +190,22 @@ $(document).ready(function() {
 
     // ----------------
 
+    $('a[href^="#"]').on('click', function (e) {
+      e.preventDefault();
+      var hrefAttr = $(this).attr("href");
+      if( hrefAttr.length > 0 && hrefAttr != "#" ) {
+          $('html, body').stop().animate({
+              'scrollTop': $(hrefAttr).offset().top+2
+          }, 500);
+      }
+      if($("#respNav").is(":visible") && bodyWidth <= 767) {
+        $("#respNav").fadeOut(300);
+        $(".respmenubtn").removeClass("active");
+      }
+    });
+
+    // ----------------
+
     if($("#map").length > 0) {
         var mapZoom = $("#map").attr("data-zoom");
         var lat = $("#map").attr("data-lat");
